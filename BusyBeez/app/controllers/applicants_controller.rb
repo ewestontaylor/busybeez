@@ -25,7 +25,7 @@ class ApplicantsController < ApplicationController
     @applicant = @job.applicants.build(applicant_params)
 
     if @applicant.save
-      redirect_to([@applicant.job, @applicant], notice: 'Applicant was successfully created.')
+      redirect_to(jobs_path, notice: "Application received successfully! Thank you, we'll be in touch :)")
     else
       render action: 'new'
     end
