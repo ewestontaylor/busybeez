@@ -1,31 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="bg">
+  <div class="title">
+    <p id="notice"><%= notice %></p>
+    <center><h1>BUSYBEEZ</h1></center>
+  </div>
 
-<h1>Jobs</h1>
+  <div class="frame">
+    <center>
+      <table>
+        <thead>
+          <tr>
+            <th class="hidden">Title</th>
+            <th class="hidden">Colour</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Colour</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @jobs.each do |job| %>
+            <tr>
+              <td><%= job.title %></td>
+              <td><%= job.colour %></td>
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= job.colour %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <td class="hidden"><%= link_to 'Show', job %></td>
+              <td class="hidden"><%= link_to 'Edit', edit_job_path(job) %></td>
+              <td class="hidden"><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-<br>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-<%= link_to 'New Job', new_job_path %>
+      <br>
+
+      <div class="hidden">
+        <%= link_to 'New Job', new_job_path %>
+      </div>
+
+    </center>
+  </div>
+</div>
