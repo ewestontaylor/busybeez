@@ -1,0 +1,27 @@
+<h1>Listing applicants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applicants.each do |applicant| %>
+  <tr>
+    <td><%= applicant.name %></td>
+    <td><%= applicant.phone %></td>
+    <td><%= applicant.email %></td>
+    <td><%= link_to 'Show', [applicant.job, applicant] %></td>
+    <td><%= link_to 'Edit', edit_job_applicant_path(applicant.job, applicant) %></td>
+    <td><%= link_to 'Destroy', [applicant.job, applicant], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Applicant', new_job_applicant_path(params[:job_id]) %>

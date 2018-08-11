@@ -101,6 +101,7 @@ GEM
     msgpack (1.2.4)
     msgpack (1.2.4-x86-mingw32)
     multi_json (1.13.1)
+    nested_scaffold (1.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -198,6 +199,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   duktape
   jbuilder (~> 2.5)
+  nested_scaffold
   puma (~> 3.11)
   rails (~> 5.2.1)
   sass-rails (~> 5.0)
