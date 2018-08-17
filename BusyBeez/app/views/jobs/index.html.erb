@@ -10,7 +10,6 @@
         <thead>
           <tr>
             <th class="hidden">Title</th>
-            <th class="hidden">Colour</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -18,8 +17,9 @@
         <tbody>
           <% @jobs.each do |job| %>
             <tr>
-              <td class="titlecolor stripe"><%= job.title %></td>
-              <td><%= job.colour %></td>
+              <td class="titlecolor stripe" style="background-color: <%= job.colour %>">
+                <%= link_to job.title, new_job_applicant_path(job)  %>
+              </td>
 
               <td class="hidden"><%= link_to 'Show', job %></td>
               <td class="hidden"><%= link_to 'Edit', edit_job_path(job) %></td>
