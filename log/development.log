@@ -1,0 +1,1858 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateJobs (20180811045917)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "colour" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180811045917_create_jobs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180811045917"]]
+  ↳ bin/rails:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-11 05:04:16.305242"], ["updated_at", "2018-08-11 05:04:16.305242"]]
+  ↳ bin/rails:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 127.0.0.1 at 2018-08-12 11:33:41 +1200
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (12.5ms)
+Completed 200 OK in 46ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:33:48 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 781ms (Views: 771.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:33:54 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 95ms (Views: 88.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:38:08 +1200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 411ms (Views: 391.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:41:26 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (70.2ms)
+  Rendered jobs/new.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 152ms (Views: 137.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-08-12 11:42:01 +1200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"42av80jyFyCvRSBx8LZMs4CTQv5/cultFWysNqGRhSsc3wy5Wvs7wUqBRrE8/ZSC1+CbJmJ3n5R/ihD3Kzj8sQ==", "job"=>{"title"=>"TREE PLANTING", "description"=>"", "colour"=>""}, "commit"=>"Create Job"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[36mJob Create (1.4ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "description", "colour", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "TREE PLANTING"], ["description", ""], ["colour", ""], ["created_at", "2018-08-11 23:42:01.525757"], ["updated_at", "2018-08-11 23:42:01.525757"]]
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 11:42:01 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 70ms (Views: 56.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:42:03 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 57ms (Views: 48.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:44:39 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 79ms (Views: 75.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:46:34 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 66ms (Views: 62.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:46:54 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 94ms (Views: 90.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:47:46 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 85ms (Views: 81.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:48:03 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 92ms (Views: 88.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:48:43 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:49:25 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:50:21 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:55:05 +1200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateApplicants (20180811231902)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180811231902_create_applicants.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "applicants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "job_id" integer, "name" varchar, "phone" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_32d387f70d"
+FOREIGN KEY ("job_id")
+  REFERENCES "jobs" ("id")
+)[0m
+  ↳ db/migrate/20180811231902_create_applicants.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_applicants_on_job_id" ON "applicants" ("job_id")[0m
+  ↳ db/migrate/20180811231902_create_applicants.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180811231902"]]
+  ↳ bin/rails:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:55:31 +1200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 403ms (Views: 382.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:55:43 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (15.4ms)
+  Rendered jobs/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:55:47 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.5ms)
+  Rendered jobs/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-08-12 11:55:56 +1200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vEoG0XohcYcfES6TDIZZZ5+83CbXNbq+vtpXS0/47mFD86WbaChdZvrVSFPAzYFWyM8F/sowzEfUPOuKxVGX+w==", "job"=>{"title"=>"Test", "description"=>"Test", "colour"=>"red"}, "commit"=>"Create Job"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[36mJob Create (0.7ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "description", "colour", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test"], ["description", "Test"], ["colour", "red"], ["created_at", "2018-08-11 23:55:56.376561"], ["updated_at", "2018-08-11 23:55:56.376561"]]
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+Redirected to http://localhost:3000/jobs/2
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 11:55:56 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 93ms (Views: 83.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:56:01 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.0ms)
+  Rendered jobs/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 47ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 11:56:01 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 71ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:56:09 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.4ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 109ms (Views: 73.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 11:56:16 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (9.7ms)
+  Rendered applicants/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 103ms (Views: 72.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:56:33 +1200
+Processing by ApplicantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KfrqKEV/0ZsqVNJID2uS6Y3GoryfVgio/VJLX2jenErWQ0liV3b9es+QtIjDIErY2rV7ZIJTflGXtPee4nfl0A==", "applicant"=>{"name"=>"Jose", "phone"=>"0291236901", "email"=>"me@josecoelho.com"}, "commit"=>"Create Applicant", "job_id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[36mApplicant Create (1.2ms)[0m  [1m[32mINSERT INTO "applicants" ("job_id", "name", "phone", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["job_id", 1], ["name", "Jose"], ["phone", "0291236901"], ["email", "me@josecoelho.com"], ["created_at", "2018-08-11 23:56:33.282618"], ["updated_at", "2018-08-11 23:56:33.282618"]]
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:56:33 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 60ms (Views: 53.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:56:44 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.5ms)
+  Rendered jobs/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 11:56:46 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:56:46 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:56:47 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 11:56:55 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (5.4ms)
+  Rendered applicants/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 62ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:56:56 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.7ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 58ms (Views: 52.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:57:02 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 11:57:03 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.7ms)
+Completed 200 OK in 23ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:57:04 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:57:05 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:58:24 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:58:39 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:19
+  Rendered jobs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 11:59:44 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 11:59:51 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.6ms)
+  Rendered jobs/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 11:59:55 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 11:59:56 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2018-08-12 11:59:57 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.9ms)
+  Rendered jobs/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 45ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/jobs/1" for 127.0.0.1 at 2018-08-12 12:00:02 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kF8paF0d5xX6pHGbOti4+dZ4K1y2HcH41dPkIzdbWVBv5ooiTxTL9B9gF1v2k2DIgQvyhKsYtwG/NVjivfIgyg==", "job"=>{"title"=>"TREE PLANTING", "description"=>"", "colour"=>"blue"}, "commit"=>"Update Job", "id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.7ms)[0m  [1m[33mUPDATE "jobs" SET "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["colour", "blue"], ["updated_at", "2018-08-12 00:00:02.532218"], ["id", 1]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:00:02 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:00:08 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:00:08 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:01:41 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:01:43 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2018-08-12 12:01:47 +1200
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [21 times] (29.6ms)
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.9ms)
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 101ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:02:30 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:02:32 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.2ms)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:02:33 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.2ms)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:02:35 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.7ms)
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:02:35 +1200
+Processing by JobsController#index as HTML
+Completed 200 OK in 80ms (Views: 72.5ms | ActiveRecord: 0.3ms)
+
+
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 114ms (Views: 99.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 12:02:40 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (2.6ms)
+  Rendered applicants/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:02:55 +1200
+Processing by ApplicantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wu2pV2oC/SqVv3DQG9VowtoijxPsF09sdoJM++ChLiOGFCJR0jQyrKwY2UX6yOVXLGNy5MRC2jRDw3h+rY6Z9Q==", "applicant"=>{"name"=>"Applicant", "phone"=>"029 123", "email"=>"my@email.com"}, "commit"=>"Create Applicant", "job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[36mApplicant Create (0.5ms)[0m  [1m[32mINSERT INTO "applicants" ("job_id", "name", "phone", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["job_id", 1], ["name", "Applicant"], ["phone", "029 123"], ["email", "my@email.com"], ["created_at", "2018-08-12 00:02:55.165426"], ["updated_at", "2018-08-12 00:02:55.165426"]]
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[35m (34.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 42ms (ActiveRecord: 35.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:02:55 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:03:09 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.4ms)
+  Rendered jobs/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:03:15 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2018-08-12 12:03:16 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.7ms)
+  Rendered jobs/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:03:17 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.3ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 103ms (Views: 95.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:03:17 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:03:27 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:03:29 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (7.6ms)
+  Rendered jobs/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 87ms (Views: 77.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:03:30 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:03:53 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1/ecit" for 127.0.0.1 at 2018-08-12 12:03:55 +1200
+  
+ActionController::RoutingError (No route matches [GET] "/jobs/1/ecit"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/jobs/1/ecit" for 127.0.0.1 at 2018-08-12 12:04:00 +1200
+  
+ActionController::RoutingError (No route matches [GET] "/jobs/1/ecit"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2018-08-12 12:04:01 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2018-08-12 12:04:01 +1200
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by JobsController#edit as HTML
+  ↳ app/controllers/jobs_controller.rb:67
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (4.9ms)
+  Rendered jobs/edit.html.erb within layouts/application (26.5ms)
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.8ms)
+  Rendered jobs/edit.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 91ms (Views: 81.1ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 79ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/jobs/1" for 127.0.0.1 at 2018-08-12 12:04:06 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFuslF4T4BzjaFEnYuM+MCh5eHBYtgntxbObncRtmmuX4g/eTBrM/QasN+euqOYBfwqhqEWzfxSvVSdcTsTj8Q==", "job"=>{"title"=>"TREE PLANTING", "description"=>"", "colour"=>"black"}, "commit"=>"Update Job", "id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.7ms)[0m  [1m[33mUPDATE "jobs" SET "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["colour", "black"], ["updated_at", "2018-08-12 00:04:06.282956"], ["id", 1]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:04:06 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:04:09 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 12:04:10 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:04:10 +1200
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 12:04:10 +1200
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Processing by JobsController#new as HTML
+Processing by JobsController#show as HTML
+  ↳ app/controllers/jobs_controller.rb:67
+  Parameters: {"id"=>"2"}
+  Rendering jobs/new.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.6ms)
+  Rendered jobs/show.html.erb within layouts/application (1.5ms)
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/new.html.erb within layouts/application (24.6ms)
+  Rendered jobs/show.html.erb within layouts/application (0.6ms)
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 12:04:10 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+Completed 200 OK in 134ms (Views: 117.5ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 150ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 163ms (Views: 139.4ms | ActiveRecord: 0.1ms)
+
+
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 67ms (Views: 51.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/2/edit" for 127.0.0.1 at 2018-08-12 12:04:12 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (4.5ms)
+  Rendered jobs/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 62ms (Views: 48.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/2" for 127.0.0.1 at 2018-08-12 12:04:44 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YsIcgKEi2xWX9SsZafrUg3nIJMVfNq/ry31KrqZSG9SgTIBde590wkuy1iQzDbR/gHFkCybYIoBLgvsoswMTsQ==", "job"=>{"title"=>"FENCE REPAIR", "description"=>"", "colour"=>"BLACK"}, "commit"=>"Update Job", "id"=>"2"}
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.9ms)[0m  [1m[33mUPDATE "jobs" SET "title" = ?, "description" = ?, "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["title", "FENCE REPAIR"], ["description", ""], ["colour", "BLACK"], ["updated_at", "2018-08-12 00:04:44.406941"], ["id", 2]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/2
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 12:04:44 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:04:47 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/2/edit" for 127.0.0.1 at 2018-08-12 12:05:03 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.5ms)
+  Rendered jobs/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 43ms (Views: 33.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/jobs/2" for 127.0.0.1 at 2018-08-12 12:05:08 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rdwkSfJv6eXZwVq9fw+Ly5sDmLDEgpnU7PKYBIIGciRvUriUKNJGMgWGp4Al+Os3YrrYfr1sFL9sDSmCl1d6QQ==", "job"=>{"title"=>"FENCE REPAIR", "description"=>"", "colour"=>"yellow"}, "commit"=>"Update Job", "id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.5ms)[0m  [1m[33mUPDATE "jobs" SET "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["colour", "yellow"], ["updated_at", "2018-08-12 00:05:08.147021"], ["id", 2]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/2
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 12:05:08 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:05:11 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:05:17 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 54.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/edit" for 127.0.0.1 at 2018-08-12 12:05:19 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.6ms)
+  Rendered jobs/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/1" for 127.0.0.1 at 2018-08-12 12:05:22 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s2lPCQ/ZngACI3JmgMl7I03TmcENRbpY2h0vghWOEkVonq21eWrXuulwNgKnCwMUB7V7bubNF1H4ISdibvMdKQ==", "job"=>{"title"=>"TREE PLANTING", "description"=>"", "colour"=>"yellow"}, "commit"=>"Update Job", "id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.5ms)[0m  [1m[33mUPDATE "jobs" SET "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["colour", "yellow"], ["updated_at", "2018-08-12 00:05:22.515491"], ["id", 1]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/1
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:05:22 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:05:25 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/2/applicants/new" for 127.0.0.1 at 2018-08-12 12:05:29 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"2"}
+  [1m[36mJob Load (0.9ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (4.4ms)
+  Rendered applicants/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 73ms (Views: 52.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:06:34 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:06:47 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 61ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:06:54 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:06:55 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (4.9ms)
+  Rendered jobs/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:06:56 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (5.6ms)
+  Rendered jobs/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 55ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-08-12 12:07:03 +1200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XNxjctnbjCyCM1v1KkqRceLP9iI53sIedDb2V4ENRr6jZcA4y9KgzWf3PTXmAUlAtbwv+iTbtOce0EqWC6Q/JA==", "job"=>{"title"=>"WEEDING", "description"=>"", "colour"=>""}, "commit"=>"Create Job"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[36mJob Create (0.6ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "description", "colour", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "WEEDING"], ["description", ""], ["colour", ""], ["created_at", "2018-08-12 00:07:03.027811"], ["updated_at", "2018-08-12 00:07:03.027811"]]
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+Redirected to http://localhost:3000/jobs/3
+Completed 302 Found in 11ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/jobs/3" for 127.0.0.1 at 2018-08-12 12:07:03 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 57ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/3/edit" for 127.0.0.1 at 2018-08-12 12:07:05 +1200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/edit.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.9ms)
+  Rendered jobs/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 77ms (Views: 63.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/jobs/3" for 127.0.0.1 at 2018-08-12 12:07:07 +1200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yvnpqKJJKMJtMGG1Wx3PVEpOrrVhAXBI7u/WwCsk0dAL7014LX9ZdYFr7CGIj2lS4+asbdK8wSxTY3QSqoiCVw==", "job"=>{"title"=>"WEEDING", "description"=>"", "colour"=>"YELLOW"}, "commit"=>"Update Job", "id"=>"3"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[36mJob Update (0.5ms)[0m  [1m[33mUPDATE "jobs" SET "colour" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["colour", "YELLOW"], ["updated_at", "2018-08-12 00:07:07.945921"], ["id", 3]]
+  ↳ app/controllers/jobs_controller.rb:44
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:44
+Redirected to http://localhost:3000/jobs/3
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/jobs/3" for 127.0.0.1 at 2018-08-12 12:07:07 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:07:12 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 43ms (Views: 35.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:07:13 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:07:17 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/NEW" for 127.0.0.1 at 2018-08-12 12:07:19 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"NEW"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Job with 'id'=NEW):
+  
+app/controllers/jobs_controller.rb:67:in `set_job'
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:07:24 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:07:24 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.7ms)
+  Rendered jobs/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-08-12 12:07:41 +1200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mPtxYYZn5kFC8wm4AlINRZCo/Jp0+LRbcljyDBbgCxlnQtIrlG7KoKc3b3jOGdV0x9slQmn9wqIYvk7NnElygw==", "job"=>{"title"=>"BAKING", "description"=>"", "colour"=>"yellow"}, "commit"=>"Create Job"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "description", "colour", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "BAKING"], ["description", ""], ["colour", "yellow"], ["created_at", "2018-08-12 00:07:41.316396"], ["updated_at", "2018-08-12 00:07:41.316396"]]
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+Redirected to http://localhost:3000/jobs/4
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/jobs/4" for 127.0.0.1 at 2018-08-12 12:07:41 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:07:43 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 37ms (Views: 29.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/NEW" for 127.0.0.1 at 2018-08-12 12:07:48 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"NEW"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Job with 'id'=NEW):
+  
+app/controllers/jobs_controller.rb:67:in `set_job'
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:07:50 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:07:51 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (3.1ms)
+  Rendered jobs/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs/new" for 127.0.0.1 at 2018-08-12 12:07:51 +1200
+Processing by JobsController#new as HTML
+  Rendering jobs/new.html.erb within layouts/application
+  Rendered jobs/_form.html.erb (2.3ms)
+  Rendered jobs/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/jobs" for 127.0.0.1 at 2018-08-12 12:08:05 +1200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BLYpce9BDN9rirKhE0PzdHBKpK7ESftoMstDk+eFcZH7D4o7/UggPo5O1GHfCCtFJzl9dtlMjZFYLf9SbSwICw==", "job"=>{"title"=>"FACE PAINTING", "description"=>"", "colour"=>"yellow"}, "commit"=>"Create Job"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("title", "description", "colour", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "FACE PAINTING"], ["description", ""], ["colour", "yellow"], ["created_at", "2018-08-12 00:08:05.601926"], ["updated_at", "2018-08-12 00:08:05.601926"]]
+  ↳ app/controllers/jobs_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/jobs_controller.rb:30
+Redirected to http://localhost:3000/jobs/5
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/jobs/5" for 127.0.0.1 at 2018-08-12 12:08:05 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:08:07 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 39ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:08:08 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/3/applicants/new" for 127.0.0.1 at 2018-08-12 12:08:11 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"3"}
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (4.4ms)
+  Rendered applicants/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 63ms (Views: 46.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/4/applicants/new" for 127.0.0.1 at 2018-08-12 12:08:13 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"4"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (4.5ms)
+  Rendered applicants/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 74ms (Views: 66.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/5/applicants/new" for 127.0.0.1 at 2018-08-12 12:08:16 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"5"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (4.3ms)
+  Rendered applicants/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 82ms (Views: 44.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/ecit" for 127.0.0.1 at 2018-08-12 12:08:30 +1200
+  
+ActionController::RoutingError (No route matches [GET] "/jobs/1/ecit"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 12:08:41 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (3.6ms)
+  Rendered applicants/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:08:41 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.3ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:08:43 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:08:45 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:08:46 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:08:46 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 45ms (Views: 39.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:08:50 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 35ms (Views: 29.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:10:02 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:10:04 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:10:06 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:10:06 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:10:08 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 12:10:10 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (2.5ms)
+  Rendered applicants/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 12:10:13 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (3.4ms)
+  Rendered applicants/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 47ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:10:31 +1200
+Processing by ApplicantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dWKHkpZPCq/Xq5r9n02Qwv6DVeUJVLT8zXHnzoP5AVeK2yTYhEYmTjJv/D1TBkjzqfCMPRRRwgWnl1sPCVB4zQ==", "applicant"=>{"name"=>"Emily", "phone"=>"1234", "email"=>"e.weskdjbidrgbjb"}, "commit"=>"Create Applicant", "job_id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[36mApplicant Create (0.6ms)[0m  [1m[32mINSERT INTO "applicants" ("job_id", "name", "phone", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["job_id", 1], ["name", "Emily"], ["phone", "1234"], ["email", "e.weskdjbidrgbjb"], ["created_at", "2018-08-12 00:10:31.455278"], ["updated_at", "2018-08-12 00:10:31.455278"]]
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[35m (35.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 43ms (ActiveRecord: 36.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:10:31 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 48ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:10:34 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.3ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 12:10:38 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (4.1ms)
+  Rendered applicants/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:59:04 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 143ms (Views: 139.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:59:37 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (8.3ms)
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:59:37 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.7ms)
+Completed 200 OK in 28ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 95ms (Views: 89.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:59:38 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 70ms (Views: 64.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-12 12:59:41 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 12:59:43 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 42ms (Views: 35.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 12:59:47 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/1" for 127.0.0.1 at 2018-08-12 12:59:48 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 12:59:53 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.3ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 30.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1/applicants/new" for 127.0.0.1 at 2018-08-12 13:03:57 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (2.9ms)
+  Rendered applicants/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 39ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 13:04:12 +1200
+Processing by ApplicantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7iYBH4CKPhvctebJXAj9fomxm7WfnDzVYNP+lfQ5VLiq34oZOLzxneUST1y9FXDrf/BmQrfJqY1VksoQuRbjbg==", "applicant"=>{"name"=>"Emily", "phone"=>"12345", "email"=>"HI@hi.com"}, "commit"=>"Create Applicant", "job_id"=>"1"}
+  [1m[36mJob Load (0.1ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[36mApplicant Create (0.6ms)[0m  [1m[32mINSERT INTO "applicants" ("job_id", "name", "phone", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["job_id", 1], ["name", "Emily"], ["phone", "12345"], ["email", "HI@hi.com"], ["created_at", "2018-08-12 01:04:12.982537"], ["updated_at", "2018-08-12 01:04:12.982537"]]
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 13:04:12 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1/applicants" for 127.0.0.1 at 2018-08-12 13:04:20 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"1"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 1]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 33.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 16:17:56 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 371ms (Views: 330.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs/2/applicants/new" for 127.0.0.1 at 2018-08-12 16:18:02 +1200
+Processing by ApplicantsController#new as HTML
+  Parameters: {"job_id"=>"2"}
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/new.html.erb within layouts/application
+  Rendered applicants/_form.html.erb (12.9ms)
+  Rendered applicants/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 94ms (Views: 80.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/jobs/2/applicants" for 127.0.0.1 at 2018-08-12 16:18:11 +1200
+Processing by ApplicantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vk+B04cYfTCuYYB85XsScPS6lzL/PRljkMbC6HKjICIcoDS0Y8GXiEjp+M5Q4XAuWJZ0Qj9xPPitNKXRtskcZw==", "applicant"=>{"name"=>"EMILY", "phone"=>"123", "email"=>"HI"}, "commit"=>"Create Applicant", "job_id"=>"2"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[36mApplicant Create (1.3ms)[0m  [1m[32mINSERT INTO "applicants" ("job_id", "name", "phone", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["job_id", 2], ["name", "EMILY"], ["phone", "123"], ["email", "HI"], ["created_at", "2018-08-12 04:18:11.284254"], ["updated_at", "2018-08-12 04:18:11.284254"]]
+  ↳ app/controllers/applicants_controller.rb:27
+  [1m[35m (46.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/applicants_controller.rb:27
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 63ms (ActiveRecord: 48.1ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-12 16:18:11 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 86ms (Views: 75.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs/" for 127.0.0.1 at 2018-08-12 16:18:19 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 65ms (Views: 60.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/2" for 127.0.0.1 at 2018-08-12 16:18:23 +1200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/jobs_controller.rb:67
+  Rendering jobs/show.html.erb within layouts/application
+  Rendered jobs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/2/applicants" for 127.0.0.1 at 2018-08-12 16:18:25 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 2]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/2/applicants" for 127.0.0.1 at 2018-08-12 16:18:25 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"2"}
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.2ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 2]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 50.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/2/applicants" for 127.0.0.1 at 2018-08-12 16:18:28 +1200
+Processing by ApplicantsController#index as HTML
+  Parameters: {"job_id"=>"2"}
+  [1m[36mJob Load (0.3ms)[0m  [1m[34mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/applicants_controller.rb:53
+  Rendering applicants/index.html.erb within layouts/application
+  [1m[36mApplicant Load (0.1ms)[0m  [1m[34mSELECT "applicants".* FROM "applicants" WHERE "applicants"."job_id" = ?[0m  [["job_id", 2]]
+  ↳ app/views/applicants/index.html.erb:13
+  Rendered applicants/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-17 15:27:08 +1200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 30ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-17 15:27:12 +1200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/emilyroseweston-taylor/.rvm/gems/ruby-2.3.7/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for 127.0.0.1 at 2018-08-17 15:27:14 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (1.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (21.2ms)
+Started GET "/jobs" for 127.0.0.1 at 2018-08-17 15:27:14 +1200
+Processing by JobsController#index as HTML
+  Rendering jobs/index.html.erb within layouts/application
+  [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/jobs/index.html.erb:18
+  Rendered jobs/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 462ms (Views: 445.2ms | ActiveRecord: 2.7ms)
+
+
+Completed 200 OK in 114ms (Views: 107.3ms | ActiveRecord: 0.4ms)
+
+
